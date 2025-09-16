@@ -185,27 +185,27 @@ const SKILL_GROUPS: { title: string; items: string[]; level: number }[] = [
 ];
 
 // ===== Animations =====
-const container: Variants = {
+const container = {
   hidden: { opacity: 0, y: 8 },
   show: {
     opacity: 1,
     y: 0,
     transition: {
       duration: 0.6,
-      // cubic-bezier equivalent of "easeOut"
-      ease: [0.16, 1, 0.3, 1],
+      // cubic-bezier equivalent of easeOut
+      ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
     },
   },
-};
+} satisfies Variants;
 
-const reveal: Variants = {
+const reveal = {
   hidden: { opacity: 0, y: 16 },
   show: {
     opacity: 1,
     y: 0,
     transition: { duration: 0.6 },
   },
-};
+} satisfies Variants;
 
 
 // ===== Hooks / utils =====
