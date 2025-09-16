@@ -1,5 +1,6 @@
 "use client";
 
+import type { Variants } from "framer-motion";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -184,14 +185,28 @@ const SKILL_GROUPS: { title: string; items: string[]; level: number }[] = [
 ];
 
 // ===== Animations =====
-const container = {
+const container: Variants = {
   hidden: { opacity: 0, y: 8 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      // cubic-bezier equivalent of "easeOut"
+      ease: [0.16, 1, 0.3, 1],
+    },
+  },
 };
-const reveal = {
+
+const reveal: Variants = {
   hidden: { opacity: 0, y: 16 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6 },
+  },
 };
+
 
 // ===== Hooks / utils =====
 function useCycleText(words: string[], delay = 2000) {
