@@ -25,7 +25,7 @@ function SectionHeading({
       viewport={{ once: true, amount: 0.3 }}
       className={cn("mb-10", className)}
     >
-      <h2 className="flex items-center gap-2.5 text-2xl font-semibold tracking-tight sm:text-3xl">
+      <h2 className="flex items-center gap-2.5 font-mono text-2xl font-medium tracking-tight sm:text-3xl">
         {Icon && <Icon className="h-5 w-5 text-accent-brand" aria-hidden />}
         {title}
       </h2>

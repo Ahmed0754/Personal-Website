@@ -2,7 +2,7 @@ export const PROFILE = {
   name: "Syed Ahmed Ali",
   tagline: "CS student building AI agent tooling and backend systems",
   location: "New York, USA",
-  status: "Actively applying to fall internship and new-grad SWE/SDE roles",
+  focus: "Currently building CLI tooling, rate-limiting infrastructure, and mainframe automation.",
   about:
     "Computer Science student at SUNY New Paltz (B.S., GPA 3.7, expected May 2027), transferred from Rockland Community College (A.S. in Mathematics & Computer Science, GPA 3.9). Currently focused on backend/infrastructure engineering, AI agent tooling, and systems work.",
   links: {
@@ -77,6 +77,8 @@ export type ProjectItem = {
   tagline: string;
   tech: string[];
   links: { label: string; href: string }[];
+  github?: { owner: string; repo: string };
+  pypi?: string;
 };
 
 export const PROJECTS: ProjectItem[] = [
@@ -85,7 +87,8 @@ export const PROJECTS: ProjectItem[] = [
     tagline:
       "Full-stack AI web app that classifies workplace inputs (Slack messages, terminal errors, Jira tickets) and generates plain-English explanations, action items, and tone-aware reply drafts using the Claude API. FastAPI + Supabase (Postgres/Auth/RLS) backend, React + TypeScript frontend, deployed on Vercel with a Dockerized backend. Includes a weekly brag-summary feature that auto-generates resume bullets from logged intern progress.",
     tech: ["React", "TypeScript", "FastAPI", "Supabase", "Claude API"],
-    links: [],
+    links: [{ label: "Code", href: "https://github.com/Ahmed0754/rampup-ai" }],
+    github: { owner: "Ahmed0754", repo: "rampup-ai" },
   },
   {
     title: "repocheck",
@@ -93,6 +96,8 @@ export const PROJECTS: ProjectItem[] = [
       "GitHub repo health scanner published to PyPI (v0.4.0, 4 releases) scoring repos across 14 weighted health checks with JSON/CSV/Markdown/HTML export. Includes a published GitHub composite Action for CI gating, a local web dashboard (Chart.js score history, fix checklists, auto-refresh), org-wide scanning, batch mode, Slack webhook reporting, and 57-test coverage.",
     tech: ["Python", "Click", "Rich", "GitHub REST API", "PyPI", "GitHub Actions"],
     links: [{ label: "Code", href: "https://github.com/Ahmed0754/repocheck" }],
+    github: { owner: "Ahmed0754", repo: "repocheck" },
+    pypi: "repocheck",
   },
   {
     title: "ratelimiter-py",
@@ -100,6 +105,29 @@ export const PROJECTS: ProjectItem[] = [
       "Rate limiting library implementing 3 algorithms (token bucket, sliding window, fixed window) with pluggable in-memory/Redis backends using atomic operations. Includes FastAPI middleware (429/Retry-After/X-RateLimit-* headers), a 41-test suite, and a CLI benchmarking tool reporting p50/p99 latency.",
     tech: ["Python", "Redis", "FastAPI", "Click", "PyPI"],
     links: [{ label: "Code", href: "https://github.com/Ahmed0754/ratelimiter-py" }],
+    github: { owner: "Ahmed0754", repo: "ratelimiter-py" },
+    pypi: "ratelimiter-py",
+  },
+  {
+    title: "Premier League Backend API",
+    tagline:
+      "RESTful backend with Java Spring Boot, PostgreSQL, and Python ingestion for live player and match stats.",
+    tech: ["Java", "Spring Boot", "PostgreSQL", "Python"],
+    links: [
+      { label: "Code", href: "https://github.com/Ahmed0754/Premier-League-Backend-Api" },
+    ],
+    github: { owner: "Ahmed0754", repo: "Premier-League-Backend-Api" },
+  },
+  {
+    title: "AI Stock Market Predictor",
+    tagline:
+      "A full-stack AI-powered stock market forecasting application that uses LSTM (Long Short-Term Memory) neural networks to predict future stock prices. Built with Flask, Keras, and the Yahoo Finance API, the app allows users to enter any stock ticker symbol and visualize past trends alongside future predictions. Includes a sleek, responsive UI.",
+    tech: ["Python", "Flask", "Keras", "LSTM", "Yahoo Finance API"],
+    links: [
+      { label: "Code", href: "https://github.com/Ahmed0754/AI-Stock-Market-Predictor" },
+      { label: "Live", href: "https://health-dashboard-z3go.vercel.app" },
+    ],
+    github: { owner: "Ahmed0754", repo: "AI-Stock-Market-Predictor" },
   },
 ];
 

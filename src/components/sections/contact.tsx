@@ -21,7 +21,7 @@ export function Contact() {
         <SectionHeading
           icon={Mail}
           title="Contact"
-          description="Reach out directly — I'm actively looking for fall internship and new-grad roles."
+          description="Reach out directly — happy to talk about the work below or anything else."
         />
 
         <motion.div

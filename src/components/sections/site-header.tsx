@@ -40,14 +40,14 @@ export function SiteHeader() {
           {PROFILE.name}
         </a>
 
-        <nav className="hidden md:flex md:items-center md:gap-8 text-sm">
+        <nav className="hidden md:flex md:items-center md:gap-8 font-mono text-sm">
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
               href={link.href}
               className={cn(
                 "relative py-1 text-muted-foreground transition-colors hover:text-foreground",
-                active === link.href && "text-foreground"
+                active === link.href ? "text-foreground" : "link-underline"
               )}
             >
               {link.label}
@@ -100,7 +100,7 @@ export function SiteHeader() {
                   initial={{ opacity: 0, x: -8 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.25, delay: i * 0.04, ease: [0.16, 1, 0.3, 1] }}
-                  className="rounded-md px-2 py-2 text-sm text-muted-foreground hover:bg-accent hover:text-foreground"
+                  className="rounded-md px-2 py-2 font-mono text-sm text-muted-foreground hover:bg-accent hover:text-foreground"
                 >
                   {link.label}
                 </motion.a>
